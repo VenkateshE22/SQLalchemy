@@ -1,4 +1,4 @@
-from sqlalchemy.orm import declarative_base
+from sqlalchemy.orm import declarative_base, sessionmaker
 from sqlalchemy import Column, String, DateTime, Integer, create_engine
 from datetime import datetime
 import os
@@ -9,6 +9,7 @@ Base = declarative_base()
 
 engine =create_engine(connection_string, echo=True)
 
+Session = sessionmaker()
 
 """
 class User
